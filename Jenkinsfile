@@ -1,27 +1,26 @@
 pipeline {
-  agent any
+    agent any
 
-  stages {
+    stages {
 
-    stage('Clone') {
-      steps {
-        git url: 'https://github.com/Sharanya21-ai/jenkins_simple_demo.git',
-            branch: 'main'
-      }
+        stage('Clone') {
+            steps {
+                 git url: 'https://github.com/Sharanya21-ai/jenkins_simple_demo.git',
+            }
+        }
+
+        stage('Run Script') {
+            steps {
+                sh 'chmod +x script.sh'
+                sh './script.sh'
+            }
+        }
+
+        stage('Run Python File') {
+            steps {
+                sh 'python3 python.py'
+            }
+        }
+
     }
-
-    stage('Run Python Script') {
-      steps {
-        sh 'python3 --version'     // optional: check python
-        sh 'python3 python.py'     // runs your python file
-      }
-    }
-
-    stage('Run Shell Script') {
-      steps {
-        sh 'chmod +x script.sh'
-        sh './script.sh'
-      }
-    }
-  }
 }
