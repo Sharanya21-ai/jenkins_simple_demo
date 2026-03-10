@@ -22,6 +22,12 @@ pipeline {
         sh 'python3 bin.py'   // runs your python file
       }
     }
+    stage('Run Python2 Script') {
+      steps {
+        sh 'python3 --version'   // optional check
+        sh 'python3 shar.py'   // runs your python file
+      }
+    }
 
     stage('Run Script') {
       steps {
