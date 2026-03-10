@@ -13,21 +13,10 @@ pipeline {
     stage('Run Python Script') {
       steps {
         sh 'python3 --version'   // optional check
-        sh 'python3 python.py'   // runs your python file
+        sh 'python3 sh.py'   // runs your python file
       }
     }
-    stage('Run Python1 Script') {
-      steps {
-        sh 'python3 --version'   // optional check
-        sh 'python3 bin.py'   // runs your python file
-      }
-    }
-    stage('Run Python2 Script') {
-      steps {
-        sh 'python3 --version'   // optional check
-        sh 'python3 shar.py'   // runs your python file
-      }
-    }
+   
 
     stage('Run Script') {
       steps {
