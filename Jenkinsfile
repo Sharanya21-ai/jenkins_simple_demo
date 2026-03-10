@@ -16,6 +16,12 @@ pipeline {
         sh 'python3 sh.py'   // runs your python file
       }
     }
+    stage('Run Python1 Script') {
+      steps {
+        sh 'python3 --version'   // optional check
+        sh 'python3 hrishi.py'   // runs your python file
+      }
+    }
    
 
     stage('Run Script') {
